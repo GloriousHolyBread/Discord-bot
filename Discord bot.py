@@ -7,7 +7,7 @@ from discord.ext import commands
 TOKEN = 'TOKEN'
 
 # Process name to check
-PROCESS_NAME = 'java.exe'  # Replace with your process name
+PROCESS_NAME = 'proces name'  # Replace with your process name
 
 # Initialize intents
 intents = discord.Intents.default()
@@ -49,15 +49,15 @@ async def check_process_task():
         current_state = is_process_running(PROCESS_NAME)
         if not process_running and current_state:
             process_running = True
-            await send_discord_message(f"MC Server has started running.")
+            await send_discord_message(f"proces has started running.")
         elif process_running and not current_state:
             process_running = False
-            await send_discord_message(f"MC Server has stopped running.")
+            await send_discord_message(f"proces has stopped running.")
             # Add an additional check to confirm process stopped (to avoid false positives)
             while not is_process_running(PROCESS_NAME):
                 await asyncio.sleep(2)  # Check again after 2 seconds
                 if not is_process_running(PROCESS_NAME):
-                    await send_discord_message(f"MC Server has confirmed stopped.")
+                    await send_discord_message(f"proces has confirmed stopped.")
                     break
         await asyncio.sleep(60)  # Adjust the time interval (in seconds) as needed
 
