@@ -4,7 +4,7 @@ import asyncio
 from discord.ext import commands
 
 # Discord bot token
-TOKEN = 'MTE4MTkwNzk4NDEyNTc5MjMzOA.G5pTD8.44N62KJj8YO0R4vvfp56BYI7J5g6MQIIBRtz_g'
+TOKEN = 'TOKEN'
 
 # Process name to check
 PROCESS_NAME = 'java.exe'  # Replace with your process name
@@ -30,7 +30,7 @@ def is_process_running(process_name):
 
 # Function to send a message to Discord
 async def send_discord_message(message):
-    channel = bot.get_channel(1181906447903227974)  # Replace YOUR_CHANNEL_ID with your channel ID
+    channel = bot.get_channel(CHANNEL_ID)  # Replace YOUR_CHANNEL_ID with your channel ID
     await channel.send(message)
 
 # Command to check if the process is running
